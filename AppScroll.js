@@ -1,14 +1,59 @@
-var AppScroll = AppScroll || (function(win, doc){
-    
-    var cache = {},
+/*
+ * AppScroll.js
+ *
+ * Copyright 2013, Jacob Kelley - http://jakiestfu.com/
+ * Released under the MIT Licence
+ * http://opensource.org/licenses/MIT
+ *
+ * Github:  https://github.com/jakiestfu/AppScroll
+ * Version: 1.0.0
+ */
+/*jslint browser: true*/
+/*global define, module, ender*/
+(function() {
+    'use strict';
+
+    var AppScroll = function(elements){
+        var cache = {
+            toolbar: null, 
+            scroller: null
+        },
+        touchable = function(fn){
+            if(('ontouchstart' in window) && typeof fn === 'function') {
+                fn.call();
+            }
+        },
         events = {
-            touchMove: function(e){
+            listen: function(){
+                if(cache.scroller){
+                    cache.scroller.addEventListener('touchend', events._touchEnd);
+                    cache.scroller.addEventListener('scroll', events._endScroll);
+                }
+
+                if(cache.toolbar){
+                    cache.toolbar.addEventListener('touchmove', events._touchMove);
+                }
+
+                events._touchEnd();
+                events._endScroll();
+            },
+            noListen: function(){
+                if(cache.scroller){
+                    cache.scroller.removeEventListener('touchend', events._touchEnd);
+                    cache.scroller.removeEventListener('scroll', events._endScroll);
+                }
+                if(cache.toolbar){
+                    cache.toolbar.removeEventListener('touchmove', events._touchMove);
+                }
+            },
+
+            _touchMove: function(e){
                 e.preventDefault();
             },
-            touchEnd: function(e){
+            _touchEnd: function(){
                 cache.listenForScroll = true;
             },
-            endScroll: function(e){
+            _endScroll: function(){
                 if(cache.listenForScroll){
                     if(cache.scroller.scrollTop === 0){
                         cache.scroller.scrollTop = 1;
@@ -20,17 +65,34 @@ var AppScroll = AppScroll || (function(win, doc){
             }
         },
         init = function(elements){
-            cache = elements;
-            
-            cache.toolbar.addEventListener('touchmove', events.touchMove);
-            
-            cache.scroller.addEventListener('touchend', events.touchEnd);
-            cache.scroller.addEventListener('scroll', events.endScroll);
-            
-            events.touchEnd();
-            events.endScroll();
+            touchable(function(){
+                cache = elements;
+                events.listen();
+            });
         };
-    
-    return init;
-    
-})(window, document);
+
+        this.on = function(){
+            touchable(function(){
+                events.noListen();
+                events.listen();
+            });
+        };
+
+        this.off = function(){
+            touchable(events.noListen);
+        };
+
+        init(elements);
+    };
+    if ((typeof module !== 'undefined') && module.exports) {
+        module.exports = AppScroll;
+    }
+    if (typeof ender === 'undefined') {
+        this.AppScroll = AppScroll;
+    }
+    if ((typeof define === "function") && define.amd) {
+        define("AppScroll", [], function() {
+            return AppScroll;
+        });
+    }
+}).call(this);
