@@ -1,6 +1,6 @@
 # AppScroll
 
-<img src="http://i.imgur.com/cn2VQFV.png" height="500">
+<img src="demo/appscroll-demo.png" height="500">
 
 AppScroll is a tiny JS library that fixes the "website dragging" issue caused on iDevices
 
