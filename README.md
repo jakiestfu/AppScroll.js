@@ -3,7 +3,7 @@ AppScroll
 
 <img src="http://i.imgur.com/cn2VQFV.png" height="500">
 
-AppScroll is a wicked small library that fixes the ugly telltale website dragging caused on iDevices. This retains native scrolling within your webapp
+AppScroll is a tiny JS library that fixes the "website dragging" issue caused on iDevices
 
 # Usage
 
