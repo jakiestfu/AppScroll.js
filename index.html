@@ -21,7 +21,7 @@
 
     <!-- Include the compiled Ratchet JS -->
     <script src="ratchet.js"></script>
-    <script src="AppScroll.js"></script>
+    <script src="../AppScroll.js"></script>
     <script>
     	window.onload = function(){
     
@@ -47,6 +47,13 @@
           line-height: 1.5;
           color: #555;
         }
+        .share{
+          text-align: center;
+          padding: 20px 0;
+        }
+        .share iframe{
+          margin-bottom: 10px;
+        }
     </style>
 
   </head>
@@ -63,6 +70,16 @@
   <div class="content">
     <div class="content-padded">
       <p class="welcome">AppScroll is a tiny JS library that fixes the "website dragging" issue caused on iDevices.</p>
+      <div class="share">
+		<iframe src="http://ghbtns.com/github-btn.html?user=jakiestfu&repo=AppScroll.js&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="120" height="20"></iframe>
+		<iframe src="http://ghbtns.com/github-btn.html?user=jakiestfu&repo=AppScroll.js&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="120" height="20"></iframe>
+						
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="jakiestfu" data-text="AppScroll is a tiny JS library that fixes the website dragging issue caused on iDevices.">Tweet</a>
+		<a href="https://twitter.com/jakiestfu" class="twitter-follow-button" data-show-count="false">Follow @jakiestfu</a>
+		
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+
     </div>
 
     <ul class="list inset">

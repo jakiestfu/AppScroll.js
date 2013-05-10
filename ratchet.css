@@ -724,8 +724,7 @@ select {
   border-bottom: 0;
 }/* General button styles
 -------------------------------------------------- */
-
-[class*="button"] {
+[class*="button"]:not(iframe) {
   position: relative;
   display: inline-block;
   padding: 4px 12px;
@@ -746,7 +745,7 @@ select {
 }
 
 /* Active */
-[class*="button"]:active {
+[class*="button"]:not(iframe):active {
   padding-top: 5px;
   padding-bottom: 3px;
   color: #333;
@@ -874,7 +873,7 @@ select {
 }/* General count styles
 -------------------------------------------------- */
 
-[class*="count"] {
+[class*="count"]:not(iframe) {
   display: inline-block;
   padding: 4px 9px;
   font-size: 12px;
