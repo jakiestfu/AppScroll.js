@@ -26,7 +26,14 @@ scroller.on();
 scroller.off();
 ```
 
-# ToDo
+# Compliments
 
-* Event Delegation
-* Auto Sniff Elements (fixed toolbars and scrollable content areas)
+This code attempts to make your webapp's feel more "native". These other repos go well with it, too!
+
+* [Snap.js](https://github.com/jakiestfu/Snap.js)
+* [AppScroll.js](https://github.com/jakiestfu/AppScroll)
+* [fastclick](https://github.com/ftlabs/fastclick)
+
+# License
+
+MIT, Copyright 2013 Jacob Kelley
