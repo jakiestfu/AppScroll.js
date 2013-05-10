@@ -22,8 +22,9 @@ var AppScroll = AppScroll || (function(win, doc){
         init = function(elements){
             cache = elements;
             
-            cache.scroller.addEventListener('touchend', events.touchEnd);
             cache.toolbar.addEventListener('touchmove', events.touchMove);
+            
+            cache.scroller.addEventListener('touchend', events.touchEnd);
             cache.scroller.addEventListener('scroll', events.endScroll);
             
             events.touchEnd();
