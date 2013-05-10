@@ -1,11 +1,10 @@
-AppScroll
-=========
+# AppScroll
 
 <img src="http://i.imgur.com/cn2VQFV.png" height="500">
 
 AppScroll is a tiny JS library that fixes the "website dragging" issue caused on iDevices
 
-# Usage
+## Usage
 
 ```javascript
 var scroller = new AppScroll({
@@ -14,7 +13,7 @@ var scroller = new AppScroll({
 });
 ```
 
-# Public Methods
+## Public Methods
 
 ### `on`: Turns on the events
 ```javascript
@@ -26,7 +25,7 @@ scroller.on();
 scroller.off();
 ```
 
-# Compliments
+## Compliments
 
 This code attempts to make your webapp's feel more "native". These other repos go well with it, too!
 
@@ -34,6 +33,6 @@ This code attempts to make your webapp's feel more "native". These other repos g
 * [AppScroll.js](https://github.com/jakiestfu/AppScroll)
 * [fastclick](https://github.com/ftlabs/fastclick)
 
-# License
+## License
 
 MIT, Copyright 2013 Jacob Kelley
