@@ -50,7 +50,7 @@
                 cache.listenForScroll = true;
             },
             _endScroll: function(){
-                if(cache.listenForScroll){
+                if(cache.scroller && cache.listenForScroll){
                     var height = parseInt(win.getComputedStyle(cache.scroller).height, 10);
                     if((cache.scroller.scrollTop+height) === height){
                         cache.scroller.scrollTop = 1;
