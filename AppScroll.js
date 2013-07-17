@@ -14,7 +14,7 @@
     'use strict';
     var AppScroll = function(elements){
         var cache = {
-            toolbar: null, 
+            toolbar: null,
             scroller: null
         },
         touchable = function(fn){
@@ -56,7 +56,7 @@
                         cache.scroller.scrollTop = 1;
                         cache.listenForScroll = false;
                     } else if(cache.scroller.scrollTop+height === cache.scroller.scrollHeight){
-                        cache.scroller.scrollTop = cache.scroller.scrollTop-1;
+                        cache.scroller.scrollTop -= 1;
                     }
                 } else {
                     cache.listenForScroll = false;
